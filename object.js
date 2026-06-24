@@ -98,3 +98,105 @@ delete student1.address.phoneNo
 console.log(student.address?.phoneNo)
 console.log(student);
 
+
+// 3. Looop through object and print all keys & values
+
+let student2={
+  name:"kiran",
+  age:24,
+  address:{
+    city:"guntur",
+    pincode:522233,
+    phoneNo:9381948620,
+  },
+};
+for(let key in student2){
+    console.log('{',key,':',student2[key],'}')
+}
+
+//4. Copy an object and change a property , also add a new property
+
+let user={
+    name:"krishna",
+    age:80,
+
+};
+let person=user;
+console.log(person)
+person.age=68;
+person.city="edlapadu";
+console.log(person)
+
+
+//  // 6)Create an object named as compnay with nested departments with name descripiton and id of each department
+//     Loop and print the details
+//     use Optional Chaining in at least one place
+
+const company={
+    name:"Paithacs Software Solution",
+    departments:{
+        frontend:{
+            id:"pai014emp",
+            name:"frontend department",
+            description:"this team develops the frontend part",
+        },
+        backend:{
+            id:"pai018",
+            name:"backend department",
+            description:"this team develops the backend part",
+        },
+        hr:{
+            id: "HR-103",
+      name: "Human Resources",
+      description: "Manages recruitment, employee relations, and payroll."
+        },
+        
+    },
+};
+for (let key in company){
+    console.log(key,company[key]);
+};
+console.log(company.departments.frontend?.salary)
+
+
+7. Create an object book with title, author, rating
+   Update the rating of the book
+   Add a function describe() that needs to log the "Book by an author named as [author name]"
+
+const book = {
+  title: "Ramyana",
+  author: "valmiki",
+  rating: 4.5,
+  describe:"",
+};
+book.rating = 5;
+book.describe=`Book by an author named as [${book.author}]`;
+console.log(book);
+
+// 8. Create a object fro a movie, a product, for a user profile
+
+const movie = {
+  title: "Inception",
+  director: "Christopher Nolan",
+  releaseYear: 2010,
+  genres: ["Sci-Fi", "Action"]
+};
+
+function Product(name, price, category) {
+  this.name = name;
+  this.price = price;
+  this.category = category;
+}
+const product = new Product("Wireless Mouse", 29.99, "Electronics");
+
+class UserProfile {
+  constructor(username, email, isAdmin) {
+    this.username = username;
+    this.email = email;
+  }
+}
+const userProfile = new UserProfile("dev_dan", "dan@example.com", false);
+console.log(movie)
+console.log(product)
+console.log(userProfile)
+
